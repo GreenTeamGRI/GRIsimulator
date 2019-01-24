@@ -1,3 +1,28 @@
-<gri>
-test
-</gri>
+    <TreeView BorderThickness="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+        <TreeViewItem Header="GRI 102: General Disclosures">
+            <TreeViewItem Header="Organizational Profile">
+<TreeViewItem Header="102-1: Name of the organization" />
+<TreeViewItem Header="102-2: Activities, brands, products, and services">
+    <TreeViewItem Header="a. A description of the organization's activities" MouseDoubleClick="ShowDataPanel" />
+    <TreeViewItem Header="b. Primary brands, products, and services" MouseDoubleClick="ShowDataPanel"/>
+</TreeViewItem>
+<TreeViewItem Header="102-3: Location of headquarters" />
+
+            </TreeViewItem>
+            <TreeViewItem Header="Strategy">
+<TreeViewItem Header="102-14: Statement from senior decision-maker">
+
+</TreeViewItem>
+            </TreeViewItem>
+            <TreeViewItem Header="Ethics and Integrity">
+<TreeViewItem Header="102-16: Values, principles, standards, and norms of behavior">
+
+</TreeViewItem>
+            </TreeViewItem>
+        </TreeViewItem>
+        <TreeViewItem Header="GRI 103: Management Approach">
+            <TreeViewItem Header="103-1: Explanation of the material topic and its Boundary">
+
+            </TreeViewItem>
+        </TreeViewItem>
+    </TreeView>

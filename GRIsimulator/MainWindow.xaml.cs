@@ -23,8 +23,9 @@ namespace GRIsimulator {
         public MainWindow() {
             InitializeComponent();
             //test
-            for (int i = 0; i < 9; i++) {
-                text1.AppendText("TITLE ");
+            text1.Clear();
+            for (int i = 0; i < 1; i++) {
+                text1.AppendText("TITLE: ");
             }
         }
 
@@ -59,7 +60,11 @@ namespace GRIsimulator {
         void ShowDataPanel(object sender, RoutedEventArgs e) {
             SaveAll(sender, e);
             view_panel.Children.Clear();
-            view_panel.Children.Add(new Text1());
+            Text1 t1 = new Text1();
+            textbox1.Clear();
+            view_panel.Children.Add(t1);
+            view_panel.Children.Add(textbox1);
+            t1.AppendText("a. A description of the organization's activities");
         }
     }
 
