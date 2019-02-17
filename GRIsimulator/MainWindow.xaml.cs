@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Markup;
 
 namespace GRIsimulator {
     /// <summary>
@@ -22,11 +23,16 @@ namespace GRIsimulator {
     public partial class MainWindow : Window {
         public MainWindow() {
             InitializeComponent();
-            //test
+            //initial write test
             text1.Clear();
             for (int i = 0; i < 1; i++) {
-                text1.AppendText("TITLE: ");
+                text1.AppendText("initial write test success");
             }
+            //dynamic tree creation
+            FileStream treeFile = new FileStream("GRIstandards.xaml", FileMode.Open, FileAccess.Read);
+            UIElement griTree = (UIElement)XamlReader.Load(treeFile);
+            
+            tree_panel.Children.Add(griTree);
         }
 
         //class variables

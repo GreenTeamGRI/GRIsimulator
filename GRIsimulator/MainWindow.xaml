@@ -30,7 +30,7 @@
             </Grid.ColumnDefinitions>
             <!-- tree pane -->
             <ScrollViewer Grid.Column="0" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-                <StackPanel>
+                <StackPanel x:Name="tree_panel">
                     <TreeView BorderThickness="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled">
                         <TreeViewItem Header="GRI 102: General Disclosures">
                             <TreeViewItem Header="Organizational Profile">
