@@ -21,6 +21,7 @@ namespace GRIsimulator {
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window {
+        //Constructor
         public MainWindow() {
             InitializeComponent();
             //initial write test
@@ -39,6 +40,15 @@ namespace GRIsimulator {
         StreamWriter f = new StreamWriter("test.txt"); //use "\r\n" to write newline
 
         //user defined
+
+        //NewWindow
+        void New(object sender, RoutedEventArgs e) {
+            test_disp.AppendText("--open NewWindow window");
+            NewWindow newWindow = new NewWindow();
+            newWindow.Owner = this;
+            newWindow.ShowDialog();
+        }
+
         //test click
         void OnClick1(object sender, RoutedEventArgs e) {
             //test change color
@@ -60,17 +70,25 @@ namespace GRIsimulator {
             test_disp.AppendText(" end \r\n");
             f.Write(textbox1.Text + " end \r\n");
             f.Flush();
+            if (sender is Button) {
+                ((Button)sender).Content = "what";
+            }
         }
 
         //show the data panel when a standard is double clicked
-        void ShowDataPanel(object sender, RoutedEventArgs e) {
+        //the standard is necessarily an Item
+        public void ShowDataPanel(object sender, RoutedEventArgs e) {
             SaveAll(sender, e);
             view_panel.Children.Clear();
+
+            GRIStandard griTree = sender as GRIStandard;
+            Item griTreeItem = griTree.SelectedItem as Item;
             Text1 t1 = new Text1();
+                t1.AppendText(griTreeItem.Header.ToString());
+
             textbox1.Clear();
             view_panel.Children.Add(t1);
             view_panel.Children.Add(textbox1);
-            t1.AppendText("a. A description of the organization's activities");
         }
     }
 

@@ -11,7 +11,7 @@
         <!-- menu bar -->
         <Menu x:Name="menu" DockPanel.Dock="Top">
             <MenuItem Header="_File">
-                <MenuItem Header="_New"/>
+                <MenuItem Header="_New" Click="New"/>
                 <MenuItem Header="_Open"/>
                 <MenuItem Header="_Save"/>
                 <MenuItem Header="_Export"/>
@@ -31,34 +31,7 @@
             <!-- tree pane -->
             <ScrollViewer Grid.Column="0" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
                 <StackPanel x:Name="tree_panel">
-                    <TreeView BorderThickness="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled">
-                        <TreeViewItem Header="GRI 102: General Disclosures">
-                            <TreeViewItem Header="Organizational Profile">
-                                <TreeViewItem Header="102-1: Name of the organization" />
-                                <TreeViewItem Header="102-2: Activities, brands, products, and services">
-                                    <TreeViewItem Header="a. A description of the organization's activities" MouseDoubleClick="ShowDataPanel" />
-                                    <TreeViewItem Header="b. Primary brands, products, and services" MouseDoubleClick="ShowDataPanel"/>
-                                </TreeViewItem>
-                                <TreeViewItem Header="102-3: Location of headquarters" />
-
-                            </TreeViewItem>
-                            <TreeViewItem Header="Strategy">
-                                <TreeViewItem Header="102-14: Statement from senior decision-maker">
-
-                                </TreeViewItem>
-                            </TreeViewItem>
-                            <TreeViewItem Header="Ethics and Integrity">
-                                <TreeViewItem Header="102-16: Values, principles, standards, and norms of behavior">
-
-                                </TreeViewItem>
-                            </TreeViewItem>
-                        </TreeViewItem>
-                        <TreeViewItem Header="GRI 103: Management Approach">
-                            <TreeViewItem Header="103-1: Explanation of the material topic and its Boundary">
-
-                            </TreeViewItem>
-                        </TreeViewItem>
-                    </TreeView>
+                    <!-- tree inserted here from external source -->
                 </StackPanel>
             </ScrollViewer>
             <!-- width adjuster -->
@@ -77,7 +50,7 @@
                         <RowDefinition Height="5" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
-                    <!-- data pane -->
+                    <!-- info pane -->
                     <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Stretch">
                         <StackPanel x:Name="info_panel">
                             <Button x:Name="b1" Click="OnClick1" Content="Button 1"/>

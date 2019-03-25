@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:GRIsimulator"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <!-- button styles -->
+        <!-- Button styles -->
         <Style TargetType="Button">
             <Setter Property="Height" Value="20" />
             <Setter Property="Width" Value="auto" />
@@ -17,7 +17,7 @@
             <Setter Property="Margin" Value="10" />
             <Setter Property="HorizontalAlignment" Value="Left"/>
         </Style>
-        <!-- textbox styles -->
+        <!-- TextBox styles -->
         <Style TargetType="TextBox">
             <Setter Property="Height" Value="100" />
             <Setter Property="Width" Value="auto" />
@@ -28,7 +28,7 @@
             <Setter Property="Height" Value="100" />
             <Setter Property="Width" Value="auto" />
         </Style>
-        <!-- custom text1 styles -->
+        <!-- custom Text1 styles -->
         <Style TargetType="local:Text1">
             <Setter Property="Margin" Value="5" />
         </Style>
