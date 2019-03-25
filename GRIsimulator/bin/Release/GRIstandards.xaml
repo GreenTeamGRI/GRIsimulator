@@ -7,7 +7,7 @@
             <local:Item Header = "102-1: Name of the organization" />
             <local:Item Header="102-2: Activities, brands, products, and services">
                 <local:Item Header = "a. A description of the organization's activities" />
-                <local:Item Header="b. Primary brands, products, and services" />
+                <local:Item Header="b. Primary brands, products, and services" dataType="list"/>
             </local:Item>
             <local:Item Header = "102-3: Location of headquarters" />
 

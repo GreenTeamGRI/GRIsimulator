@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GRIsimulator"
         mc:Ignorable="d"
-        Title="New" Height="600" Width="400">
+        Title="New" Height="300" Width="400">
 
     <DockPanel>
         <!-- action bar -->
@@ -21,16 +21,16 @@
             <StackPanel Grid.Column="0" Name="industry" VerticalAlignment="Stretch" Margin="10">
                 <TextBlock HorizontalAlignment="Center">Industry <LineBreak /></TextBlock>
 
-                <RadioButton GroupName="Industry" Content="Generic" IsChecked="True"/>
+                <RadioButton GroupName="Industry" Content="Generic" IsChecked="True" IsEnabled="False"/>
                 <RadioButton GroupName="Industry" Content="Real estate"/>
-                <RadioButton GroupName="Industry" Content="Manufacturing"/>
+                <RadioButton GroupName="Industry" Content="Manufacturing" IsEnabled="False"/>
             </StackPanel>
             <!-- selection pane 2 -->
             <StackPanel Grid.Column="1" Name="Detail" VerticalAlignment="Stretch" Margin="10">
                 <TextBlock HorizontalAlignment="Center">Detail <LineBreak /></TextBlock>
 
                 <RadioButton GroupName="Detail" Content="Core" IsChecked="True"/>
-                <RadioButton GroupName="Detail" Content="Comprehensive"/>
+                <RadioButton GroupName="Detail" Content="Comprehensive" IsEnabled="False"/>
             </StackPanel>
         </Grid>
     </DockPanel>

@@ -53,12 +53,9 @@
                     <!-- info pane -->
                     <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Stretch">
                         <StackPanel x:Name="info_panel">
+                            <TextBlock x:Name="info_text" TextWrapping="Wrap"></TextBlock>
                             <Button x:Name="b1" Click="OnClick1" Content="Button 1"/>
-                            <TextBlock TextWrapping="Wrap">
-                                TEST TEXT - TEST TEXT - TEST TEXT - TEST TEXT - <LineBreak />
-                                TEST TEXT - TEST TEXT - TEST TEXT - TEST TEXT - 
-                                TEST TEXT - TEST TEXT - TEST TEXT - TEST TEXT - 
-                            </TextBlock>
+                            
                         </StackPanel>
                     </ScrollViewer>
                     <!-- height adjuster -->

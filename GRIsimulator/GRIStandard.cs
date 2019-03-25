@@ -8,8 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 
-namespace GRIsimulator
-{
+namespace GRIsimulator {
     /// <summary>
     /// This is a XAML class that extends TreeView. 
     /// It changes nothing except for the class name. 
@@ -31,8 +30,24 @@ namespace GRIsimulator
     /// This is a XAML class that extends TreeViewItem. 
     /// </summary>
     public class Item : TreeViewItem {
+
         public Item() {
+
+            dataType = "text";
         }
+
+        public String dataType {
+            get { return (String)GetValue(dataTypeProperty); }
+            set { SetValue(dataTypeProperty, value); }
+        }
+        public static readonly DependencyProperty dataTypeProperty =
+            DependencyProperty.Register(
+            "dataType",
+            typeof(String),
+            typeof(Item),
+            new FrameworkPropertyMetadata(null,
+                FrameworkPropertyMetadataOptions.AffectsRender)
+            );
 
     }
 }

@@ -83,12 +83,27 @@ namespace GRIsimulator {
 
             GRIStandard griTree = sender as GRIStandard;
             Item griTreeItem = griTree.SelectedItem as Item;
+            String itemHeader = griTreeItem.Header.ToString();
+            info_text.Text = itemHeader;
             Text1 t1 = new Text1();
-                t1.AppendText(griTreeItem.Header.ToString());
+                t1.AppendText(itemHeader);
 
             textbox1.Clear();
             view_panel.Children.Add(t1);
-            view_panel.Children.Add(textbox1);
+            //display according to dataType
+            String dataType = griTreeItem.dataType;
+            if (dataType == "text") {
+                view_panel.Children.Add(textbox1);
+            }
+            else if (dataType == "list") {
+                for (int i = 0; i < 5; i++) {
+                    TextBox listBox = new TextBox();
+                    listBox.Height = 20;
+                    listBox.Width = 100;
+                    listBox.HorizontalAlignment = HorizontalAlignment.Left;
+                    view_panel.Children.Add(listBox);
+                }
+            }
         }
     }
 
