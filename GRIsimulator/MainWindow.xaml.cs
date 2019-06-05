@@ -57,7 +57,7 @@ namespace GRIsimulator {
         //class variables
         StreamWriter f; //use "\r\n" to write newline
         GRIStandard griTree;
-        String docName;
+        public String docName;
 
         //user defined
 
@@ -104,10 +104,37 @@ namespace GRIsimulator {
 
         //ExportToWord
         public void ExportToWord(object sender, RoutedEventArgs e) {
-            TextRange content = new TextRange(currentFlowDoc.ContentStart, currentFlowDoc.ContentEnd);
-            Stream rtfWriter = new FileStream(docName + ".rtf", FileMode.OpenOrCreate);
-            content.Save(rtfWriter, DataFormats.Rtf);
-            rtfWriter.Close();
+            
+            if (griTree != null) {
+                FlowDocument collective = new FlowDocument(); ;
+                foreach (Item node in griTree.Items) {
+                    if (node.flowDoc != null) {
+                        ExportHelper(collective, node);
+                    }
+                }
+                Stream rtfWriter = new FileStream(docName + ".rtf", FileMode.OpenOrCreate);
+                TextRange content = new TextRange(collective.ContentStart, collective.ContentEnd);
+                content.Save(rtfWriter, DataFormats.Rtf);
+                rtfWriter.Close();
+            }
+        }
+        private void ExportHelper(FlowDocument collective, Item node) {
+            if (node.flowDoc != null) {
+                FlowDocument currentFlowDoc = node.flowDoc;
+                Paragraph headerPara = new Paragraph(new Run((string)node.Header));
+                headerPara.FontSize = 24;
+                headerPara.FontWeight = FontWeights.Bold;
+                List<Block> flowDocumentBlocks = new List<Block>(currentFlowDoc.Blocks);
+                foreach (Block aBlock in flowDocumentBlocks) {
+                    collective.Blocks.Add(headerPara);
+                    collective.Blocks.Add(aBlock);
+                }
+            }
+            if (node.HasItems) {
+                foreach (Item subNode in node.Items) {
+                    ExportHelper(collective, subNode);
+                }
+            }
         }
 
         //Close

@@ -41,6 +41,7 @@ namespace GRIsimulator {
             fileName = @"lib\" + "GRI " + industry + " - " + detail + ".xaml";
 
             ((MainWindow)Owner).Load(fileName);
+            ((MainWindow)Owner).docName = "";
 
             Trace.WriteLine("derp " + fileName);
 
