@@ -19,3 +19,6 @@ C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\obj\Debug\GRIsimulator.p
 C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\obj\Debug\GRIsimulator.csprojAssemblyReference.cache
 C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\bin\Debug\lib\GRIstandards.rtf
 C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\bin\Debug\lib\GRI Standard - Comprehensive.xaml
+C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\bin\Debug\lib\GRI Real estate - Comprehensive.xaml
+C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\bin\Debug\lib\GRI Real estate - Core.xaml
+C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\bin\Debug\lib\GRI Standard - Core.xaml

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +20,30 @@ namespace GRIsimulator {
     public partial class NewWindow : Window {
         public NewWindow() {
             InitializeComponent();
+
+            
         }
 
+        //class variables
+        String industry;
+        String detail;
+        String fileName;
+
+
         private void OK_Click(object sender, RoutedEventArgs e) {
+
+            RadioButton industryButton = industry_select.Children.OfType<RadioButton>()
+                 .FirstOrDefault(r => r.IsChecked.HasValue && r.IsChecked.Value);
+            industry = (string)industryButton.Content;
+            RadioButton detailButton = detail_select.Children.OfType<RadioButton>()
+                 .FirstOrDefault(r => r.IsChecked.HasValue && r.IsChecked.Value);
+            detail = (string)detailButton.Content;
+            fileName = @"lib\" + "GRI " + industry + " - " + detail + ".xaml";
+
+            ((MainWindow)Owner).Load(fileName);
+
+            Trace.WriteLine("derp " + fileName);
+
             this.Close();
         }
     }

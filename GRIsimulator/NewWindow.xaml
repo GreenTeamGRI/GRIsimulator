@@ -18,20 +18,26 @@
                 <ColumnDefinition Width="0.5*" />
             </Grid.ColumnDefinitions>
             <!-- selection pane 1 -->
-            <StackPanel Grid.Column="0" Name="industry" VerticalAlignment="Stretch" Margin="10">
-                <TextBlock HorizontalAlignment="Center">Industry <LineBreak /></TextBlock>
-
-                <RadioButton GroupName="Industry" Content="Generic" IsChecked="True" IsEnabled="False"/>
-                <RadioButton GroupName="Industry" Content="Real estate"/>
-                <RadioButton GroupName="Industry" Content="Manufacturing" IsEnabled="False"/>
-            </StackPanel>
+            <GroupBox Grid.Column="0" VerticalAlignment="Stretch" Margin="10">
+                <GroupBox.Header>
+                    <Label HorizontalAlignment="Center">Industry</Label>
+                </GroupBox.Header>
+                <StackPanel x:Name="industry_select" >
+                    <RadioButton GroupName="Industry" Content="Standard" IsChecked="True" />
+                    <RadioButton GroupName="Industry" Content="Real estate" />
+                    <RadioButton GroupName="Industry" Content="Medical" IsEnabled="False"/>
+                </StackPanel>
+            </GroupBox>
             <!-- selection pane 2 -->
-            <StackPanel Grid.Column="1" Name="Detail" VerticalAlignment="Stretch" Margin="10">
-                <TextBlock HorizontalAlignment="Center">Detail <LineBreak /></TextBlock>
-
-                <RadioButton GroupName="Detail" Content="Core" IsChecked="True"/>
-                <RadioButton GroupName="Detail" Content="Comprehensive" IsEnabled="False"/>
-            </StackPanel>
+            <GroupBox Grid.Column="1" VerticalAlignment="Stretch" Margin="10">
+                <GroupBox.Header>
+                    <Label HorizontalAlignment="Center">Detail</Label>
+                </GroupBox.Header>
+                <StackPanel Name="detail_select" >
+                    <RadioButton GroupName="Detail" Content="Core" IsChecked="True"/>
+                    <RadioButton GroupName="Detail" Content="Comprehensive"/>
+                </StackPanel>
+            </GroupBox>
         </Grid>
     </DockPanel>
 </Window>

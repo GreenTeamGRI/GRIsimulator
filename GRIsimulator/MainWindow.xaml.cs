@@ -34,33 +34,85 @@ namespace GRIsimulator {
 
             docName = "GRI Standard - Comprehensive.xaml";
             //dynamic tree creation
-            GRIStandard griTree = LoadStandard("Standard", "Comprehensive");
-            CurrentGriTree = griTree;
+            String industry = "Standard";
+            String detail = "Comprehensive";
+            String fileName = @"lib\" + "GRI " + industry + " - " + detail + ".xaml";
 
-            tree_panel.Children.Add(griTree);
+            griTree = Load(fileName);
         }
         //loads a GRI standard from lib
-        private GRIStandard LoadStandard(String industry, String detail) {
-            String fileName = @"lib\" + "GRI " + industry + " - " + detail + ".xaml";
+        public GRIStandard Load(String fileName) {
             FileStream treeFile = new FileStream(fileName, FileMode.Open, FileAccess.Read);
-            GRIStandard tree = (GRIStandard)XamlReader.Load(treeFile);
-            tree.BorderThickness = new Thickness(0, 0, 0, 0);
-            return tree;
+            GRIStandard griTree = (GRIStandard)XamlReader.Load(treeFile);
+            griTree.BorderThickness = new Thickness(0, 0, 0, 0);
+
+            tree_panel.Children.Clear();
+            tree_panel.Children.Add(griTree);
+            data_panel.Children.Clear();
+
+            test_disp.AppendText("Load successful: " + fileName);
+            return griTree;
         }
 
         //class variables
         StreamWriter f; //use "\r\n" to write newline
+        GRIStandard griTree;
         String docName;
 
         //user defined
 
-        //NewWindow
-        void New(object sender, RoutedEventArgs e) {
-            test_disp.AppendText("--open NewWindow window");
+        //New
+        public void New(object sender, RoutedEventArgs e) {
             NewWindow newWindow = new NewWindow();
             newWindow.Owner = this;
             newWindow.ShowDialog();
         }
-    }
 
+        //Open
+        public void Open(object sender, RoutedEventArgs e) {
+            // Create OpenFileDialog 
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+
+            // Set filter for file extension and default file extension 
+            dlg.DefaultExt = ".xaml";
+            dlg.Filter = "XAML Files (*.xaml)|*.xaml";
+
+            // Display OpenFileDialog by calling ShowDialog method 
+            Nullable<bool> result = dlg.ShowDialog();
+
+            if (result == true) {
+                docName = dlg.FileName;
+                Load(docName);
+            }
+        }
+
+        //SaveAs
+        public void SaveAs(object sender, RoutedEventArgs e) {
+            Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
+            dlg.FileName = "GRI "; // Default file name
+            dlg.DefaultExt = ".xaml"; // Default file extension
+            dlg.Filter = "XAML Files (*.xaml)|*.xaml"; // Filter files by extension
+
+            // Show save file dialog box
+            Nullable<bool> result = dlg.ShowDialog();
+
+            if (result == true) {
+                docName = dlg.FileName;
+                SaveAll(sender, e);
+            }
+        }
+
+        //ExportToWord
+        public void ExportToWord(object sender, RoutedEventArgs e) {
+            TextRange content = new TextRange(currentFlowDoc.ContentStart, currentFlowDoc.ContentEnd);
+            Stream rtfWriter = new FileStream(docName + ".rtf", FileMode.OpenOrCreate);
+            content.Save(rtfWriter, DataFormats.Rtf);
+            rtfWriter.Close();
+        }
+
+        //Close
+        public void Close(object sender, RoutedEventArgs e) {
+            this.Close();
+        }
+    }
 }

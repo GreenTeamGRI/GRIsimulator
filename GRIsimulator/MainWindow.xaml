@@ -12,10 +12,10 @@
         <Menu x:Name="menu" DockPanel.Dock="Top">
             <MenuItem Header="_File">
                 <MenuItem Header="_New" Click="New"/>
-                <MenuItem Header="_Open"/>
-                <MenuItem Header="_Save"/>
-                <MenuItem Header="_Export"/>
-                <MenuItem Header="_Close"/>
+                <MenuItem Header="_Open" Click="Open"/>
+                <MenuItem Header="_Save As" Click="SaveAs"/>
+                <MenuItem Header="_Export" Click="ExportToWord"/>
+                <MenuItem Header="_Close" Click="Close"/>
             </MenuItem>
             <MenuItem Header="_Options">
                 <MenuItem Header="_Not implemented" IsEnabled="False"/>
@@ -54,9 +54,7 @@
                     <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Stretch">
                         <StackPanel x:Name="info_panel">
                             <local:Text1 x:Name="info_text" TextWrapping="Wrap"></local:Text1>
-                            <Button x:Name="b1" Click="OnClick1" Content="Button 1"/>
-                            
-                        </StackPanel>
+                            </StackPanel>
                     </ScrollViewer>
                     <!-- height adjuster -->
                     <GridSplitter Grid.Row="1" Height="5" HorizontalAlignment="Stretch"/>

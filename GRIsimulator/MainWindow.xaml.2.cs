@@ -24,26 +24,12 @@ namespace GRIsimulator {
     /// </summary>
     public partial class MainWindow : Window {
 
-        GRIStandard CurrentGriTree; //current document for full save write
         Item currentItem; //keeps track of current item to update
         FlowDocument currentFlowDoc; //keeps track of current FlowDoc to update
 
         //test click
-        void OnClick1(object sender, RoutedEventArgs e) {
-            //test change color
-            if (data_panel.Background == null) {
-                Trace.WriteLine("Color: default");
-                data_panel.Background = Brushes.Green;
-            } else {
-                Trace.WriteLine("Color: " + menu.Background.ToString());
-                data_panel.Background = null;
-            }
-            //test change element value
-            Text1 t = new Text1();
-            t.Text = "asdfad";
-            data_panel.Children.Add(t);
-        }
-
+        //use Trace.WriteLine("");
+        
         //stub- save currentFlowDoc to currentItem > ContentContainer 
         void SaveCurrent() {
             if (currentItem != null && currentFlowDoc != null) {
@@ -56,11 +42,15 @@ namespace GRIsimulator {
         //test write to file
         void SaveAll(object sender, RoutedEventArgs e) {
             //SaveCurrent();
-            f = new StreamWriter(docName, false);
-            f.WriteLine(XamlWriter.Save(CurrentGriTree)); 
-            f.Flush();
-            f.Close();
-            test_disp.AppendText(" wrote \r\n");
+            if (docName == null || docName == "" || docName == " ") {
+                SaveAs(sender, e);
+            } else {
+                f = new StreamWriter(docName, false);
+                f.WriteLine(XamlWriter.Save(griTree));
+                f.Flush();
+                f.Close();
+                test_disp.AppendText(" wrote \r\n");
+            }
         }
 
         //show the data panel when a standard is double clicked

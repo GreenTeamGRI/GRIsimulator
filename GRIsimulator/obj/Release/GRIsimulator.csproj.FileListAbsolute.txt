@@ -18,4 +18,4 @@ C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\obj\Release\GRIsimulator
 C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\obj\Release\NewWindow.g.cs
 C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\obj\Release\NewWindow.baml
 C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\bin\Release\lib\GRIstandards.rtf
-C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\bin\Release\lib\GRI Standard - Core.xml
+C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\bin\Release\lib\GRI Standard - Comprehensive.xaml
