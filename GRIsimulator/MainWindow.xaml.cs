@@ -16,6 +16,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Markup;
 
+//this MainWindow partial class mainly contains methods 
+//for the window interactions
 namespace GRIsimulator {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -25,19 +27,30 @@ namespace GRIsimulator {
         public MainWindow() {
             InitializeComponent();
             //initial write test
-            text1.Clear();
+            title.Clear();
             for (int i = 0; i < 1; i++) {
-                text1.AppendText("initial write test success");
+                title.AppendText("initial write test success");
             }
+
+            docName = "GRI Standard - Comprehensive.xaml";
             //dynamic tree creation
-            FileStream treeFile = new FileStream("GRIstandards.xaml", FileMode.Open, FileAccess.Read);
-            UIElement griTree = (UIElement)XamlReader.Load(treeFile);
-            
+            GRIStandard griTree = LoadStandard("Standard", "Comprehensive");
+            CurrentGriTree = griTree;
+
             tree_panel.Children.Add(griTree);
+        }
+        //loads a GRI standard from lib
+        private GRIStandard LoadStandard(String industry, String detail) {
+            String fileName = @"lib\" + "GRI " + industry + " - " + detail + ".xaml";
+            FileStream treeFile = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+            GRIStandard tree = (GRIStandard)XamlReader.Load(treeFile);
+            tree.BorderThickness = new Thickness(0, 0, 0, 0);
+            return tree;
         }
 
         //class variables
-        StreamWriter f = new StreamWriter("test.txt"); //use "\r\n" to write newline
+        StreamWriter f; //use "\r\n" to write newline
+        String docName;
 
         //user defined
 
@@ -47,63 +60,6 @@ namespace GRIsimulator {
             NewWindow newWindow = new NewWindow();
             newWindow.Owner = this;
             newWindow.ShowDialog();
-        }
-
-        //test click
-        void OnClick1(object sender, RoutedEventArgs e) {
-            //test change color
-            if (view_panel.Background == null) {
-                Trace.WriteLine("Color: default");
-                view_panel.Background = Brushes.Green;
-            } else {
-                Trace.WriteLine("Color: " + menu.Background.ToString());
-                view_panel.Background = null;
-            }
-            //test change element value
-            Text1 t = new Text1();
-            t.Text = "asdfad";
-            view_panel.Children.Add(t);
-        }
-
-        //test write to file
-        void SaveAll(object sender, RoutedEventArgs e) {
-            test_disp.AppendText(" end \r\n");
-            f.Write(textbox1.Text + " end \r\n");
-            f.Flush();
-            if (sender is Button) {
-                ((Button)sender).Content = "what";
-            }
-        }
-
-        //show the data panel when a standard is double clicked
-        //the standard is necessarily an Item
-        public void ShowDataPanel(object sender, RoutedEventArgs e) {
-            SaveAll(sender, e);
-            view_panel.Children.Clear();
-
-            GRIStandard griTree = sender as GRIStandard;
-            Item griTreeItem = griTree.SelectedItem as Item;
-            String itemHeader = griTreeItem.Header.ToString();
-            info_text.Text = itemHeader;
-            Text1 t1 = new Text1();
-                t1.AppendText(itemHeader);
-
-            textbox1.Clear();
-            view_panel.Children.Add(t1);
-            //display according to dataType
-            String dataType = griTreeItem.dataType;
-            if (dataType == "text") {
-                view_panel.Children.Add(textbox1);
-            }
-            else if (dataType == "list") {
-                for (int i = 0; i < 5; i++) {
-                    TextBox listBox = new TextBox();
-                    listBox.Height = 20;
-                    listBox.Width = 100;
-                    listBox.HorizontalAlignment = HorizontalAlignment.Left;
-                    view_panel.Children.Add(listBox);
-                }
-            }
         }
     }
 

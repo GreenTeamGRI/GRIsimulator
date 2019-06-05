@@ -53,7 +53,7 @@
                     <!-- info pane -->
                     <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Stretch">
                         <StackPanel x:Name="info_panel">
-                            <TextBlock x:Name="info_text" TextWrapping="Wrap"></TextBlock>
+                            <local:Text1 x:Name="info_text" TextWrapping="Wrap"></local:Text1>
                             <Button x:Name="b1" Click="OnClick1" Content="Button 1"/>
                             
                         </StackPanel>
@@ -62,9 +62,9 @@
                     <GridSplitter Grid.Row="1" Height="5" HorizontalAlignment="Stretch"/>
                     <!-- data pane -->
                     <ScrollViewer Grid.Row="2" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto" >
-                        <StackPanel x:Name="view_panel" VerticalAlignment="Stretch">
-                            <local:Text1 x:Name="text1">Title</local:Text1>
-                            <TextBox x:Name="textbox1" />
+                        <StackPanel x:Name="data_panel" VerticalAlignment="Stretch">
+                            <local:Text1 x:Name="title" TextWrapping="Wrap"></local:Text1>
+                            <RichTextBox x:Name="richtextbox1" AcceptsReturn="True" Height="Auto" MinHeight="100" />
                         </StackPanel>
                     </ScrollViewer>
                 </Grid>

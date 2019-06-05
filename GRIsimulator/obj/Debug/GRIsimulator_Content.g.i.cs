@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("gristandards.xaml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("lib/gri%20standard%20-%20core.xml")]
 
 
