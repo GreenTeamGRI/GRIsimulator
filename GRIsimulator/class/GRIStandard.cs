@@ -35,7 +35,7 @@ namespace GRIsimulator {
         public Item() {
             description = "";
             content = "";
-            flowDoc = new FlowDocument(new Paragraph(new Run("DEFAULT FLOWDOC")));
+            flowDoc = new FlowDocument();
             dataType = "";
         }
 

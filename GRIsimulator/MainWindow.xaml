@@ -42,7 +42,7 @@
                 <WrapPanel Grid.Row="3" FlowDirection="RightToLeft" DockPanel.Dock="Bottom" Background="#FFF0F0F0" Height="40" >
                     <Button x:Name="save_all" Click="SaveAll" Content="Save All"/>
                     <!-- test output disp -->
-                    <TextBox x:Name="test_disp" Style="{StaticResource textbox_style1}" Height="40" Width="500" VerticalScrollBarVisibility="Auto"></TextBox>
+                    <TextBox x:Name="test_disp" Style="{StaticResource textbox_style1}" Height="20" Width="500" IsEnabled="False" VerticalScrollBarVisibility="Auto"></TextBox>
                 </WrapPanel>
                 <Grid>
                     <Grid.RowDefinitions>

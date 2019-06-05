@@ -3,7 +3,7 @@
     xmlns:local="clr-namespace:GRIsimulator;assembly=GRIsimulator">
     <!--<local:Item Header = "" description="" content="" dataType="" />-->
 
-    <local:Item Header="GRI 101: FOUNDATION" description="" content="" dataType="">
+    <local:Item Header="GRI 101: FOUNDATION" description="Standard - Comprehensive" content="" dataType="">
         <local:Item Header="1. Reporting Principles" description="State that this report is following these principles: Stakeholder Inclusiveness, Sustainability Context, Materiality, Completeness; Accuracy, Balance, Clarity, Comparability, Reliability, Timeliness." content="" dataType="text" />
         <local:Item Header="2.* Using the GRI Standards for Sustainability Reporting" description="State that this report is using the GRI Standards for Sustainability Reporting" content="" dataType="text" />
         <local:Item Header="3.* Making claims related to the use of the GRI Standards" description="State that the claims made in this report are related to the use of the GRI Standards" content="" dataType="text" />
@@ -13,13 +13,7 @@
 
         <local:Item Header="ORGANIZATIONAL PROFILE">
             <local:Item Header = "* 102-1: Name of the organization" description="The reporting organization shall report the Name of the organization" content="" dataType="text" >
-                <local:Item.flowDoc>
-                    <FlowDocument>
-                        <Paragraph>
-                            <Run>EXISTING FLOWDOC</Run>
-                        </Paragraph>
-                    </FlowDocument>
-                </local:Item.flowDoc>
+                
             </local:Item>
             <local:Item Header = "* 102-2: Activities, brands, products, and services" description="" content="" dataType="">
                 <local:Item Header = "a. A description of the organization's activities" description="" content="" dataType="text"/>
