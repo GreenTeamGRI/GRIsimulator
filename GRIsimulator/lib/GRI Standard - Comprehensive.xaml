@@ -10,7 +10,7 @@
     </local:Item>
 
     <local:Item Header="GRI 102: GENERAL DISCLOSURES" description="" content="" dataType="">
-
+        
         <local:Item Header="ORGANIZATIONAL PROFILE">
             <local:Item Header = "* 102-1: Name of the organization" description="The reporting organization shall report the Name of the organization" content="" dataType="text" >
                 

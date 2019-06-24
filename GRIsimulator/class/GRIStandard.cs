@@ -35,7 +35,7 @@ namespace GRIsimulator {
         public Item() {
             description = "";
             content = "";
-            flowDoc = new FlowDocument();
+            flowDoc = new FlowDocument(new Paragraph(new Run()));
             dataType = "";
         }
 
@@ -82,7 +82,7 @@ namespace GRIsimulator {
                     }
                 }
             }
-            return new FlowDocument(new Paragraph(new Run("DISPLAY THIS IF NO FLOWDOC")));
+            return new FlowDocument();
         }
 
         //get, set datatype

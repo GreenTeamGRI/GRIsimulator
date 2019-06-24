@@ -38,12 +38,12 @@ namespace GRIsimulator {
             String detail = "Comprehensive";
             String fileName = @"lib\" + "GRI " + industry + " - " + detail + ".xaml";
 
-            griTree = Load(fileName);
+            Load(fileName);
         }
         //loads a GRI standard from lib
-        public GRIStandard Load(String fileName) {
+        public void Load(String fileName) {
             FileStream treeFile = new FileStream(fileName, FileMode.Open, FileAccess.Read);
-            GRIStandard griTree = (GRIStandard)XamlReader.Load(treeFile);
+            griTree = (GRIStandard)XamlReader.Load(treeFile);
             griTree.BorderThickness = new Thickness(0, 0, 0, 0);
 
             tree_panel.Children.Clear();
@@ -51,7 +51,6 @@ namespace GRIsimulator {
             data_panel.Children.Clear();
 
             test_disp.AppendText("Load successful: " + fileName);
-            return griTree;
         }
 
         //class variables
@@ -89,7 +88,7 @@ namespace GRIsimulator {
         //SaveAs
         public void SaveAs(object sender, RoutedEventArgs e) {
             Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
-            dlg.FileName = "GRI "; // Default file name
+            dlg.FileName = "GRI"; // Default file name
             dlg.DefaultExt = ".xaml"; // Default file extension
             dlg.Filter = "XAML Files (*.xaml)|*.xaml"; // Filter files by extension
 
@@ -104,24 +103,32 @@ namespace GRIsimulator {
 
         //ExportToWord
         public void ExportToWord(object sender, RoutedEventArgs e) {
-            
+
             if (griTree != null) {
-                FlowDocument collective = new FlowDocument(); ;
+                FlowDocument collective = new FlowDocument();
                 foreach (Item node in griTree.Items) {
                     if (node.flowDoc != null) {
                         ExportHelper(collective, node);
                     }
                 }
-                Stream rtfWriter = new FileStream(docName + ".rtf", FileMode.OpenOrCreate);
-                TextRange content = new TextRange(collective.ContentStart, collective.ContentEnd);
-                content.Save(rtfWriter, DataFormats.Rtf);
-                rtfWriter.Close();
+
+                Stream rtfWrite = new FileStream(docName + ".rtf", FileMode.OpenOrCreate);
+                TextRange content;
+                content = new TextRange(collective.ContentStart, collective.ContentEnd);
+                content.Save(rtfWrite, DataFormats.Rtf);
+
+                rtfWrite.Flush();
+                rtfWrite.Close();
             }
         }
         private void ExportHelper(FlowDocument collective, Item node) {
             if (node.flowDoc != null) {
-                FlowDocument currentFlowDoc = node.flowDoc;
                 Paragraph headerPara = new Paragraph(new Run((string)node.Header));
+
+                Trace.WriteLine("tyty " + node.Header);
+
+                FlowDocument currentFlowDoc = new FlowDocument();
+                AddDocument(node.flowDoc, currentFlowDoc);
                 headerPara.FontSize = 24;
                 headerPara.FontWeight = FontWeights.Bold;
                 List<Block> flowDocumentBlocks = new List<Block>(currentFlowDoc.Blocks);
@@ -135,6 +142,20 @@ namespace GRIsimulator {
                     ExportHelper(collective, subNode);
                 }
             }
+        }
+
+        /// <summary>
+        /// Adds one flowdocument to another.
+        /// </summary>
+        /// <param name="from">From.</param>
+        /// <param name="to">To.</param>
+        public static void AddDocument(FlowDocument from, FlowDocument to) {
+            TextRange range = new TextRange(from.ContentStart, from.ContentEnd);
+            MemoryStream stream = new MemoryStream();
+            System.Windows.Markup.XamlWriter.Save(range, stream);
+            range.Save(stream, DataFormats.XamlPackage);
+            TextRange range2 = new TextRange(to.ContentEnd, to.ContentEnd);
+            range2.Load(stream, DataFormats.XamlPackage);
         }
 
         //Close
