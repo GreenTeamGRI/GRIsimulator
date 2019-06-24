@@ -22,3 +22,7 @@ C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\bin\Release\lib\GRI Stan
 C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\bin\Release\lib\GRI Real estate - Comprehensive.xaml
 C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\bin\Release\lib\GRI Real estate - Core.xaml
 C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\bin\Release\lib\GRI Standard - Core.xaml
+C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\bin\Release\lib\underline.gif
+C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\bin\Release\lib\bold.gif
+C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\bin\Release\lib\bullet.gif
+C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\bin\Release\lib\italic.gif

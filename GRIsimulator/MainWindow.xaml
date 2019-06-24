@@ -54,7 +54,7 @@
                     <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Stretch">
                         <StackPanel x:Name="info_panel">
                             <local:Text1 x:Name="info_text" TextWrapping="Wrap"></local:Text1>
-                            </StackPanel>
+                        </StackPanel>
                     </ScrollViewer>
                     <!-- height adjuster -->
                     <GridSplitter Grid.Row="1" Height="5" HorizontalAlignment="Stretch"/>
@@ -62,6 +62,23 @@
                     <ScrollViewer Grid.Row="2" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto" >
                         <StackPanel x:Name="data_panel" VerticalAlignment="Stretch">
                             <local:Text1 x:Name="title" TextWrapping="Wrap"></local:Text1>
+                            <DockPanel x:Name="edit_bar">
+                                <ToolBar DockPanel.Dock="Top">
+                                    <ToggleButton Command="EditingCommands.ToggleBold" Name="btnBold">
+                                        <Image Source="lib/bold.gif" Width="16" Height="16" />
+                                    </ToggleButton>
+                                    <ToggleButton Command="EditingCommands.ToggleItalic" Name="btnItalic">
+                                        <Image Source="lib/italic.gif" Width="16" Height="16" />
+                                    </ToggleButton>
+                                    <ToggleButton Command="EditingCommands.ToggleUnderline" Name="btnUnderline">
+                                        <Image Source="lib/underline.gif" Width="16" Height="16" />
+                                    </ToggleButton>
+                                    <ToggleButton Command="EditingCommands.ToggleBullets" Name="btnBullet">
+                                        <Image Source="lib/bullet.gif" Width="16" Height="16" />
+                                    </ToggleButton>
+                                    <Separator />
+                                </ToolBar>
+                            </DockPanel>
                             <RichTextBox x:Name="richtextbox1" AcceptsReturn="True" Height="Auto" MinHeight="100" />
                         </StackPanel>
                     </ScrollViewer>

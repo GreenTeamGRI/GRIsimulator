@@ -88,6 +88,7 @@ namespace GRIsimulator {
             } else {
                 richtextbox1.Document = doc;
                 //richtextbox1.AppendText(griTreeItem.content);//test
+                data_panel.Children.Add(edit_bar);
                 data_panel.Children.Add(richtextbox1);
 
             }
