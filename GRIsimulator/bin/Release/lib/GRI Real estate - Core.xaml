@@ -199,27 +199,27 @@
 
   </local:Item>
 
-  <local:Item Header="GRI 103: MANAGEMENT APPROACH" description="" content="" dataType="">
+    <local:Item Header="GRI 103: MANAGEMENT APPROACH" description="Explain the following for each material topic" content="" dataType="">
 
-    <local:Item Header = "* 103-1: Explanation of the material topic and its Boundary" description="For each material topic, the reporting organization shall report the following information" content="" dataType="">
-      <local:Item Header = "a. An explanation of why the topic is material" description="" content="" dataType="" />
-      <local:Item Header = "b. The Boundary for the material topic" description="The Boundary for the material topic, which includes a description of: i. where the impacts occur; ii. the organization's involvement with the impacts. For example, whether the organization has caused or contributed to the impacts, or is directly linked to the impacts through its business relationships." content="" dataType="" />
-      <local:Item Header = "c. Any specific limitation regarding the topic Boundary" description="" content="" dataType="" />
+        <local:Item Header = "* 103-1: Explanation of the material topic and its Boundary" description="For each material topic, the reporting organization shall report the following information" content="" dataType="noHeading">
+            <local:Item Header = "a. An explanation of why the topic is material" description="" content="" dataType="noHeading" />
+            <local:Item Header = "b. The Boundary for the material topic" description="The Boundary for the material topic, which includes a description of: i. where the impacts occur; ii. the organization's involvement with the impacts. For example, whether the organization has caused or contributed to the impacts, or is directly linked to the impacts through its business relationships." content="" dataType="noHeading" />
+            <local:Item Header = "c. Any specific limitation regarding the topic Boundary" description="" content="" dataType="noHeading" />
+        </local:Item>
+        <local:Item Header = "* 103-2: The management approach and its components" description="For each material topic, the reporting organization shall report the following information" content="" dataType="noHeading">
+            <local:Item Header = "a. An explanation of how the organization manages the topic" description="" content="" dataType="noHeading" />
+            <local:Item Header = "b. A statement of the purpose of the management approach" description="" content="" dataType="noHeading" />
+            <local:Item Header = "c. Description" description="A description of the following, if the management approach includes that component: i. Policies ii. Commitments iii. Goals and targets iv. Responsibilities v. Resources vi. Grievance mechanisms vii. Specific actions, such as processes, projects, programs and initiatives" content="" dataType="noHeading" />
+        </local:Item>
+        <local:Item Header = "* 103-3: Evaluation of the management approach" description="For each material topic, the reporting organization shall report the following information" content="" dataType="noHeading">
+            <local:Item Header = "a. An explanation of how the organization evaluates the management approach" description="including: i. the mechanisms for evaluating the effectiveness of the management approach; ii. the results of the evaluation of the management approach; iii. any related adjustments to the management approach" content="" dataType="noHeading" />
+        </local:Item>
+
     </local:Item>
-    <local:Item Header = "* 103-2: The management approach and its components" description="For each material topic, the reporting organization shall report the following information" content="" dataType="">
-      <local:Item Header = "a. An explanation of how the organization manages the topic" description="" content="" dataType="" />
-      <local:Item Header = "b. A statement of the purpose of the management approach" description="" content="" dataType="" />
-      <local:Item Header = "c. Description" description="A description of the following, if the management approach includes that component: i. Policies ii. Commitments iii. Goals and targets iv. Responsibilities v. Resources vi. Grievance mechanisms vii. Specific actions, such as processes, projects, programs and initiatives" content="" dataType="" />
-    </local:Item>
-    <local:Item Header = "* 103-3: Evaluation of the management approach" description="For each material topic, the reporting organization shall report the following information" content="" dataType="">
-      <local:Item Header = "a. An explanation of how the organization evaluates the management approach" description="including: i. the mechanisms for evaluating the effectiveness of the management approach; ii. the results of the evaluation of the management approach; iii. any related adjustments to the management approach" content="" dataType="" />
-    </local:Item>
-
-  </local:Item>
 
 
 
-  <local:Item Header="GRI 300: ENVIRONMENTAL" description="" content="" dataType="">
+    <local:Item Header="GRI 300: ENVIRONMENTAL" description="" content="" dataType="">
 
     <local:Item Header = "GRI 301 MATERIALS" description="" content="" dataType="text" >
       <local:Item Header = "301-1 Materials used by weight or volume" description="" content="" dataType="text" />

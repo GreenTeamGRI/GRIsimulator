@@ -29,7 +29,7 @@ namespace GRIsimulator {
 
         //test click
         //use Trace.WriteLine("");
-        
+
         //stub- save currentFlowDoc to currentItem > ContentContainer 
         void SaveCurrent() {
             if (currentItem != null && currentFlowDoc != null) {
@@ -43,7 +43,11 @@ namespace GRIsimulator {
         void SaveAll(object sender, RoutedEventArgs e) {
             //SaveCurrent();
             if (docName == null || docName == "" || docName == " ") {
-                SaveAs(sender, e);
+                if (griTree != null) {
+                    SaveAs(sender, e);
+                } else {
+
+                }
             } else {
                 f = new StreamWriter(docName, false);
                 f.WriteLine(XamlWriter.Save(griTree));
@@ -82,12 +86,11 @@ namespace GRIsimulator {
 
             //display content according to dataType
             //note: currently, regardless of dataType, the default edit field is a RichTextBox
-            if (dataType == null || dataType == "" || dataType == " ") { //no dataType means the tree item doesn't require input
+            if (dataType == null || dataType == "" || dataType == " " || dataType == "none" || dataType == "noHeading") { //no dataType means the tree item doesn't require input
                 doc = null;
                 currentFlowDoc = doc;
             } else {
                 richtextbox1.Document = doc;
-                //richtextbox1.AppendText(griTreeItem.content);//test
                 data_panel.Children.Add(edit_bar);
                 data_panel.Children.Add(richtextbox1);
 

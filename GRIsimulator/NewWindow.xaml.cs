@@ -32,6 +32,7 @@ namespace GRIsimulator {
 
         private void OK_Click(object sender, RoutedEventArgs e) {
 
+            //dynamic tree creation
             RadioButton industryButton = industry_select.Children.OfType<RadioButton>()
                  .FirstOrDefault(r => r.IsChecked.HasValue && r.IsChecked.Value);
             industry = (string)industryButton.Content;
@@ -43,7 +44,7 @@ namespace GRIsimulator {
             ((MainWindow)Owner).Load(fileName);
             ((MainWindow)Owner).docName = "";
 
-            Trace.WriteLine("derp " + fileName);
+            //Trace.WriteLine("derp " + fileName);
 
             this.Close();
         }

@@ -8,6 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("gristandards.xaml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("readme.txt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("lib/gri%20real%20estate%20-%20comprehensive.xaml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("lib/gri%20real%20estate%20-%20core.xaml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("lib/gri%20standard%20-%20comprehensive.xaml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("lib/gri%20standard%20-%20core.xaml")]
 
 

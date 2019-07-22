@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GRIsimulator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="800">
+        Title="MainWindow" Height="600" Width="1080">
 
     <DockPanel>
         <!-- menu bar -->
@@ -64,18 +64,19 @@
                             <local:Text1 x:Name="title" TextWrapping="Wrap"></local:Text1>
                             <DockPanel x:Name="edit_bar">
                                 <ToolBar DockPanel.Dock="Top">
-                                    <ToggleButton Command="EditingCommands.ToggleBold" Name="btnBold">
-                                        <Image Source="lib/bold.gif" Width="16" Height="16" />
-                                    </ToggleButton>
-                                    <ToggleButton Command="EditingCommands.ToggleItalic" Name="btnItalic">
-                                        <Image Source="lib/italic.gif" Width="16" Height="16" />
-                                    </ToggleButton>
-                                    <ToggleButton Command="EditingCommands.ToggleUnderline" Name="btnUnderline">
-                                        <Image Source="lib/underline.gif" Width="16" Height="16" />
-                                    </ToggleButton>
-                                    <ToggleButton Command="EditingCommands.ToggleBullets" Name="btnBullet">
-                                        <Image Source="lib/bullet.gif" Width="16" Height="16" />
-                                    </ToggleButton>
+                                    <Button Command="EditingCommands.ToggleBold" Name="btnBold">
+                                        <Image Source="lib\bold.png" Width="16" Height="16" />
+                                    </Button>
+                                    <Button Command="EditingCommands.ToggleItalic" Name="btnItalic">
+                                        <Image Source="lib\italic.png" Width="16" Height="16" />
+                                    </Button>
+                                    <Button Command="EditingCommands.ToggleUnderline" Name="btnUnderline">
+                                        <Image Source="lib\underline.png" Width="16" Height="16" />
+                                    </Button>
+                                    <Separator />
+                                    <Button Command="EditingCommands.ToggleBullets" Name="btnBullet">
+                                        <Image Source="lib\bullets.png" Width="16" Height="16" />
+                                    </Button>
                                     <Separator />
                                 </ToolBar>
                             </DockPanel>

@@ -27,25 +27,39 @@ namespace GRIsimulator {
         public MainWindow() {
             InitializeComponent();
             //initial write test
-            title.Clear();
-            for (int i = 0; i < 1; i++) {
-                title.AppendText("initial write test success");
-            }
+            info_text.Text = "Welcome to GRIsimulator! " +
+                "A program that helps you understand, compile, and generate " +
+                "a report on the Global Reporting Initiative reporting standard. \n\r" +
 
-            docName = "GRI Standard - Comprehensive.xaml";
-            //dynamic tree creation
-            String industry = "Standard";
-            String detail = "Comprehensive";
-            String fileName = @"lib\" + "GRI " + industry + " - " + detail + ".xaml";
+                "Click the buttons below to start a New report, " +
+                "Open an existing report, " +
+                "Or Help to visit the GitHub page for help on how to use the program. ";
 
-            Load(fileName);
+            data_panel.Children.Clear();
+
+            Button newBtn = new Button();
+            newBtn.Content = "New";
+            newBtn.Click += new RoutedEventHandler(New);
+            data_panel.Children.Add(newBtn);
+
+            Button openBtn = new Button();
+            openBtn.Content = "Open";
+            openBtn.Click += new RoutedEventHandler(Open);
+            data_panel.Children.Add(openBtn);
+
+            Button helpBtn = new Button();
+            helpBtn.Content = "Help";
+            helpBtn.Click += new RoutedEventHandler(Help);
+            data_panel.Children.Add(helpBtn);
         }
         //loads a GRI standard from lib
         public void Load(String fileName) {
             FileStream treeFile = new FileStream(fileName, FileMode.Open, FileAccess.Read);
             griTree = (GRIStandard)XamlReader.Load(treeFile);
             griTree.BorderThickness = new Thickness(0, 0, 0, 0);
+            docName = fileName;
 
+            info_text.Text = "Explore the GRI standards on the left. ";
             tree_panel.Children.Clear();
             tree_panel.Children.Add(griTree);
             data_panel.Children.Clear();
@@ -122,10 +136,10 @@ namespace GRIsimulator {
             }
         }
         private void ExportHelper(FlowDocument collective, Item node) {
-            if (node.flowDoc != null) {
+            if (node.flowDoc != null && node.dataType != "noHeading") {
                 Paragraph headerPara = new Paragraph(new Run((string)node.Header));
 
-                Trace.WriteLine("tyty " + node.Header);
+                //test Trace.WriteLine("tyty " + node.Header);
 
                 FlowDocument currentFlowDoc = new FlowDocument();
                 AddDocument(node.flowDoc, currentFlowDoc);
@@ -156,6 +170,11 @@ namespace GRIsimulator {
             range.Save(stream, DataFormats.XamlPackage);
             TextRange range2 = new TextRange(to.ContentEnd, to.ContentEnd);
             range2.Load(stream, DataFormats.XamlPackage);
+        }
+
+        public void Help(object sender, RoutedEventArgs e) {
+            System.Diagnostics.Process.Start(
+                @"https://github.com/GreenTeamGRI/GRIsimulator#grisimulator");
         }
 
         //Close

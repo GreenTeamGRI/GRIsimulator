@@ -1,4 +1,3 @@
-C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\bin\Debug\lib\GRIstandards.rtf
 C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\bin\Debug\lib\GRI Real estate - Comprehensive.xaml
 C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\bin\Debug\lib\GRI Real estate - Core.xaml
 C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\bin\Debug\lib\GRI Standard - Core.xaml
@@ -6,7 +5,6 @@ C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\bin\Debug\lib\GRI Standa
 C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\bin\Debug\GRIsimulator.exe.config
 C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\bin\Debug\GRIsimulator.exe
 C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\bin\Debug\GRIsimulator.pdb
-C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\obj\Debug\GRIsimulator.csprojAssemblyReference.cache
 C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\obj\Debug\MainWindow.g.cs
 C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\obj\Debug\NewWindow.g.cs
 C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\obj\Debug\App.g.cs
@@ -22,3 +20,5 @@ C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\obj\Debug\GRIsimulator.c
 C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\obj\Debug\GRIsimulator.csproj.CoreCompileInputs.cache
 C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\obj\Debug\GRIsimulator.exe
 C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\obj\Debug\GRIsimulator.pdb
+C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\obj\Debug\GRIsimulator_Content.g.cs
+C:\Users\Francis\source\repos\GRIsimulator\GRIsimulator\bin\Debug\README.txt
