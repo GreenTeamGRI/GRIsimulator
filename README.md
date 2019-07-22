@@ -11,7 +11,7 @@ The easiest way to do that is to download the Visual Studio installer and instal
 
 ## How to download and install
 
-Navigate to https://github.com/GreenTeamGRI/GRIsimulator/blob/master/GRIsimulator-release1-0-2.zip
+Navigate to https://github.com/GreenTeamGRI/GRIsimulator/blob/master/GRIsimulator-release1-0-3.zip
 
 Download the zip file named GRIsimulator-release#-#.zip.
 Unzip the files; no installation necessary. 
